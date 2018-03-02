@@ -61,8 +61,8 @@ final class ImageViewerDismissalTransition: NSObject, UIViewControllerAnimatedTr
         
         fromView?.isHidden = true
         fadeView.frame = containerView.bounds
-        fadeView.backgroundColor = .black
-        
+        fadeView.backgroundColor = .clear
+
         containerView.addSubview(fadeView)
         containerView.addSubview(animatableImageview)
     }
@@ -108,7 +108,7 @@ private extension ImageViewerDismissalTransition {
                 self.animatableImageview.contentMode = .scaleAspectFit
                 self.animatableImageview.transform = .identity
                 self.animatableImageview.frame = self.fromImageView.frame
-                self.fadeView.alpha = 1.0
+                self.fadeView.alpha = 0.9
             case .end:
                 self.animatableImageview.contentMode = self.toImageView.contentMode
                 self.animatableImageview.transform = .identity
